@@ -1,4 +1,5 @@
 # SpringBoot-Project : 3WORK HEALTH CARE
+![image](https://github.com/Kongnamu/Final-Project-3WORK/assets/132464605/a3cc33e5-7d48-43bd-b810-d905c9384d3f)
 ---
 스프링부트 + Thymeleaf 헬스 케어 커뮤니티 사이트
 
@@ -20,6 +21,9 @@
 
 ### ⚙️ 개발 환경 (JAVA / JDK 17)
 ![image](https://github.com/Kongnamu/Final-Project-3WORK/assets/132464605/881f0afd-0e97-414a-9df7-7cbc46a535be)
+
+## 💡 주요 기능
+
 
 
 
