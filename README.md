@@ -1,13 +1,11 @@
 # SpringBoot-Project : 3WORK HEALTH CARE
 ![image](https://github.com/Kongnamu/Final-Project-3WORK/assets/132464605/a3cc33e5-7d48-43bd-b810-d905c9384d3f)
----
 스프링부트 + Thymeleaf 헬스 케어 커뮤니티 사이트
 
 ## 📝 프로젝트 소개
 바쁜 현대사회 속 현대인의 건강한 라이프스타일 촉진을 위한 정보 및 소통 서비스를 제공하는 사이트입니다.
 
 ## ⏰ 개발 기간
----
  -  2024.01.29. ~ 2024.02.20.
 
 ### 🧑‍🤝‍🧑 팀원구성
