@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="UTF-8">
+<title>3WORK : WWW</title>
+<link rel="stylesheet" th:href="@{/css/common.css}">
+<link rel="stylesheet" th:href="@{/css/board/musicboard.css}">
+<script src="https://kit.fontawesome.com/aa24b12773.js"
+	crossorigin="anonymous"></script>
+</head>
+
+<body>
+	<div id="container" style="height: 1400px;">
+		<div id="musicboard">
+			<!-- header.html 연결 -->
+			<div th:replace="~{header}"></div>
+			<section class="msection">
+				<div id="mcontainer">
+					<div class="mbox">
+						<div class="t_box">
+							<p class="tag">검색 결과</p>
+						</div>
+
+						<table id="mtable">
+							<thead>
+								<tr>
+									<th class="td_box">인기 순위</th>
+									<th class="td_box">아이디</th>
+									<th class="td_box">닉네임</th>
+									<th class="td_box">홈페이지</th>
+								</tr>
+							</thead>
+							<tbody id="contentA">
+								<tr th:each="user, iterStat : ${usersList}">
+									<td>
+										<div th:if="${iterStat.count <= 3}">
+											<img th:if="${iterStat.count == 1}"
+												th:src="@{/images/rank/1st.jpeg}" alt="1등"
+												class="rank-image" /> <img th:if="${iterStat.count == 2}"
+												th:src="@{/images/rank/2nd.jpeg}" alt="2등"
+												class="rank-image" /> <img th:if="${iterStat.count == 3}"
+												th:src="@{/images/rank/3rd.jpeg}" alt="3등"
+												class="rank-image" />
+										</div> <span th:if="${iterStat.count > 3}"
+										th:text="${iterStat.count}"></span>
+									</td>
+									<td th:text="${user.uid}"></td>
+									<td th:text="${user.unickname}"></td>
+									<td><a th:href="@{/user/userpage/${user.uno}}"
+										th:onclick="popUp([[${user.uno}]])" class="visit-button">방문</a>
+									</td>
+								</tr>
+							</tbody>
+
+
+						</table>
+
+					</div>
+					<div class="pagination">
+					
+
+					</div>
+
+				</div>
+			</section>
+			<!-- footer.html 연결 -->
+			<div th:replace="~{footer}"></div>
+		</div>
+	</div>
+	<!-- 유저페이지 팝업 JS -->
+	<script src="/js/main.js"></script>
+
+	<script>
+   //
+   const popUp = (uno) => {
+      event.preventDefault();
+      window.open('/user/userpage/' + uno, '_blank', 'width=1450,height=900');
+   }
+      // 버튼 클릭 시 실행될 함수 정의
+      function handleLoginButtonClick() {
+         // 서버로부터 받은 인증 상태
+         let serverResponse = {
+            "isAuthenticated" : true
+         //권한 인증
+         };
+         // 서버에서 받은 인증 상태를 가져옴
+         let isAuthenticated = serverResponse.isAuthenticated;
+
+         // 인증 상태에 따라 동작 결정
+         if (isAuthenticated) {
+            let popOption = "width=1450, height=850";
+            let openUrl = '/user/userpage';
+            window.open(openUrl, '미니홈페이지', popOption);
+         } else {
+            window.location.href = '/login';
+         }
+      }
+      
+      document.addEventListener("DOMContentLoaded", function() {
+          // 페이지가 로드될 때 실행되는 함수
+          calculateAndSortRank();
+      });
+
+
+      </script>
+</body>
+</html>
