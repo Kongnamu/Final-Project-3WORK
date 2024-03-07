@@ -48,7 +48,7 @@ public class UsersService {
          //2. 권한 설정
          String encPW = pwEncoder.encode(usersDTO.getUpassword());
          usersDTO.setUpassword(encPW);
-         usersDTO.setRole(Role.MEMBER);
+         usersDTO.setRole(Role.ADMIN);
          
          //dto -> entity 변환 메서드
          Users users = Users.toSaveEntity(usersDTO);
