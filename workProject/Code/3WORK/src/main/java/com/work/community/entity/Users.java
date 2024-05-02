@@ -102,9 +102,6 @@ public class Users extends BaseEntity {
    @OneToOne(fetch = FetchType.EAGER, mappedBy = "users", cascade = CascadeType.ALL)
    @JoinColumn(name = "cartno")
    private Cart cart;
-   
-   @OneToMany(mappedBy = "users", cascade = CascadeType.ALL)
-   private List<Event> userEvent;
        
    // dto -> entity
    public static Users toSaveEntity(UsersDTO usersDTO) {

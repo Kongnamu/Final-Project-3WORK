@@ -22,7 +22,6 @@ public interface UsersRepository extends JpaRepository<Users,Integer>{
    //이름과 전화번호 일치시 아이디찾기 
    Optional<Users> findByUnameAndUphone(String uname, String uphone);
    
-   //방문자 수 증가
    @Modifying
    @Query("UPDATE Users u SET u.hits = u.hits + 1 WHERE u.uno = :uno")
    public void updateHits(Integer uno);
