@@ -78,7 +78,7 @@
 ## 📋 프로젝트 구조
 해당 프로젝트의 구조는 아래와 같이 구성되어 있습니다.
 ### 메인 소스 디렉토리 구조
- - '''workProject\Code\3WORK\src''' : Java 소스 파일 및 정적 자료, 각종 페이지 html파일
- * 으아아
+ - ```workProject\Code\3WORK\src``` : Java 소스 파일 및 정적 자료, 각종 페이지 html파일
+  - 왜안되지
 ---
 ## * 상세 구현 화면 및 코드는 상단 '3WORK HEALTH CARE 화면 구현 자료'에서 확인 부탁드립니다.
