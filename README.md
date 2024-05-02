@@ -1,7 +1,7 @@
 # Spring Boot 기반 웹 서비스 개발 : 3WORK: WWW HEALTH CARE
 ![image](https://github.com/Kongnamu/Final-Project-3WORK/assets/132464605/ab829309-177f-4785-8b27-2ef179ca7d54)
 
-Spring Boot와 JPA를 활용한 건강 커뮤니티 사이트
+> Spring Boot와 JPA를 활용한 건강 커뮤니티 사이트
 
 ## 📝 프로젝트 소개
 바쁜 현대사회 속 현대인의 건강한 라이프스타일 촉진을 위한 정보 및 소통 서비스를 제공하는 사이트입니다.
@@ -78,7 +78,7 @@ Spring Boot와 JPA를 활용한 건강 커뮤니티 사이트
 ## 📋 프로젝트 구조
 해당 프로젝트의 구조는 아래와 같이 구성되어 있습니다.
 ### 메인 소스 디렉토리 구조
- - workProject\Code\3WORK\src : Java 소스 파일 및 정적 자료, 각종 페이지 html파일
- -- 
+ - '''workProject\Code\3WORK\src''' : Java 소스 파일 및 정적 자료, 각종 페이지 html파일
+ * 으아아
 ---
 ## * 상세 구현 화면 및 코드는 상단 '3WORK HEALTH CARE 화면 구현 자료'에서 확인 부탁드립니다.
