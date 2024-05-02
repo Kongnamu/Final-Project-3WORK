@@ -173,7 +173,11 @@ public class UsersController {
    }
 
    
-  
+   // 비밀번호 찾기 요청 페이지
+   @GetMapping("/user/resetpassword")
+   public String pwSearchForm() {
+       return "user/resetpassword";
+   }
 
    
    //비밀번호 재설정
@@ -181,12 +185,6 @@ public class UsersController {
    public String resetForm(UsersDTO usersDTO) {
       return "user/resetpassword2";
       }
-   
-   // 비밀번호 찾기 요청 페이지
-   @GetMapping("/user/resetpassword")
-   public String pwSearchForm() {
-       return "user/resetpassword";
-   }
    
    @PostMapping("/user/resetpassword")
    public String resetPassword(@ModelAttribute UsersDTO usersDTO,Model model)   {
