@@ -21,11 +21,14 @@ import org.springframework.web.multipart.MultipartFile;
 
 import com.work.community.config.SecurityUser;
 import com.work.community.dto.CommentsDTO;
+import com.work.community.dto.EventDTO;
 import com.work.community.dto.UsersDTO;
+import com.work.community.entity.Event;
 import com.work.community.entity.Users;
 import com.work.community.repository.UsersRepository;
 import com.work.community.service.CommentsService;
 import com.work.community.service.EmailService;
+import com.work.community.service.EventService;
 import com.work.community.service.UsersService;
 
 import jakarta.servlet.http.HttpSession;
@@ -41,6 +44,7 @@ public class UsersController {
    private final UsersRepository usersRepository;
    private final CommentsService commentsService;
    private final EmailService emailService;
+   private final EventService eventService;
    
    //로그인 페이지 요청 :  /login
    @GetMapping("/login")
@@ -53,9 +57,14 @@ public class UsersController {
     public String userPage(@PathVariable Integer uno,
       @PageableDefault(page = 1) Pageable pageable,
                       Model model) {
+	   
+	  //이벤트
+	  List<EventDTO> events = eventService.getAllEvents();
+	  //방명록 
       Page<CommentsDTO> commentList = commentsService.findListAll(pageable);
       //방문자 수
       usersService.updateHits(uno);
+      //회원 정보
       Users users = usersService.findById(uno);
       
       //하단에 페이지 영역 만들기
@@ -71,6 +80,7 @@ public class UsersController {
         model.addAttribute("Userinfo", users);
         model.addAttribute("startPage", startPage);
         model.addAttribute("endPage", endPage);
+        model.addAttribute("event", events);
       return "user/userpage";
    }
     
@@ -205,6 +215,17 @@ public class UsersController {
       }
    }
 
+   
+   
+   @GetMapping("/user/userupdate_m")
+   public String updateUserForm_m(
+		   @AuthenticationPrincipal SecurityUser principal,
+		   Model model) {
+	   UsersDTO usersDTO = usersService.findByUid(principal);
+	   model.addAttribute("users", usersDTO);
+	   return "user/userupdate_m";
+   }
+   
    //회원 수정 페이지
    //@AuthenticationPrincipal - 회원을 인가하는 클래스
    @GetMapping("/user/userupdate")
@@ -214,15 +235,6 @@ public class UsersController {
       UsersDTO usersDTO = usersService.findByUid(principal);
       model.addAttribute("users", usersDTO);
       return "user/userupdate";
-   }
-   
-   @GetMapping("/user/userupdate_m")
-   public String updateUserForm_m(
-		   @AuthenticationPrincipal SecurityUser principal,
-		   Model model) {
-	   UsersDTO usersDTO = usersService.findByUid(principal);
-	   model.addAttribute("users", usersDTO);
-	   return "user/userupdate_m";
    }
       
    
