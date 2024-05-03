@@ -79,7 +79,8 @@
 해당 프로젝트의 구조는 아래와 같이 구성되어 있습니다.
 ### 메인 소스 디렉토리 구조
  - ```workProject\Code\3WORK\src``` : Java 소스 파일 및 정적 자료, 각종 페이지 html파일
-      - ```workProject\Logo``` : 각종 컨텐츠 이미지파일
- 
+ - ```workProject\Logo``` : 각종 컨텐츠 이미지파일
+ - ```pom.xml``` : 프로젝트의 의존성 및 빌드 설정을 정의
+ - ```application.properties```: Spring Boot 애플리케이션 설정 파일.
 ---
 ## * 상세 구현 화면 및 코드는 상단 '3WORK HEALTH CARE 화면 구현 자료'에서 확인 부탁드립니다.
